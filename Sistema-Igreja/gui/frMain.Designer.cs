@@ -33,6 +33,9 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.membroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.igrejaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -76,9 +79,31 @@
             // 
             // cadastrarToolStripMenuItem
             // 
+            this.cadastrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSeparator1,
+            this.membroToolStripMenuItem,
+            this.igrejaToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // membroToolStripMenuItem
+            // 
+            this.membroToolStripMenuItem.Name = "membroToolStripMenuItem";
+            this.membroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.membroToolStripMenuItem.Text = "Membro";
+            this.membroToolStripMenuItem.Click += new System.EventHandler(this.membroToolStripMenuItem_Click);
+            // 
+            // igrejaToolStripMenuItem
+            // 
+            this.igrejaToolStripMenuItem.Name = "igrejaToolStripMenuItem";
+            this.igrejaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.igrejaToolStripMenuItem.Text = "Igreja";
             // 
             // visualizarToolStripMenuItem
             // 
@@ -121,6 +146,9 @@
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem membroToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem igrejaToolStripMenuItem;
     }
 }
 

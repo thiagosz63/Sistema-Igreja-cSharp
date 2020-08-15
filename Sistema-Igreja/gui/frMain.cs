@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using Sistema_Igreja.gui;
 
 namespace Sistema_Igreja
@@ -14,7 +15,7 @@ namespace Sistema_Igreja
     public partial class frMain : Form
     {
         frLogin frlogin;
-
+        
         public frMain()
         {
             InitializeComponent();
@@ -36,6 +37,12 @@ namespace Sistema_Igreja
         {
             this.Visible = false;
             frlogin.ShowDialog();
+        }
+
+        private void membroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frRegister frregister = new frRegister();
+            frregister.ShowDialog();
         }
     }
 }
