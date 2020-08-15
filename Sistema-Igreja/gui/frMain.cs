@@ -41,8 +41,14 @@ namespace Sistema_Igreja
 
         private void membroToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+
             frRegister frregister = new frRegister();
-            frregister.ShowDialog();
+            frregister.MdiParent = this;
+            frregister.Show();
         }
     }
 }
