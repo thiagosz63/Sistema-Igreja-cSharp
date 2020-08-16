@@ -38,6 +38,7 @@
             this.igrejaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnAncoraForm = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,14 +67,14 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -117,14 +118,22 @@
             this.ajudaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.ajudaToolStripMenuItem.Text = "Ajuda";
             // 
+            // pnAncoraForm
+            // 
+            this.pnAncoraForm.BackColor = System.Drawing.SystemColors.Control;
+            this.pnAncoraForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnAncoraForm.Location = new System.Drawing.Point(0, 24);
+            this.pnAncoraForm.Name = "pnAncoraForm";
+            this.pnAncoraForm.Size = new System.Drawing.Size(800, 426);
+            this.pnAncoraForm.TabIndex = 2;
+            // 
             // frMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Sistema_Igreja.Properties.Resources.Capturar;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pnAncoraForm);
             this.Controls.Add(this.menuStrip1);
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -149,6 +158,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem membroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem igrejaToolStripMenuItem;
+        private System.Windows.Forms.Panel pnAncoraForm;
     }
 }
 

@@ -14,7 +14,8 @@ namespace Sistema_Igreja
 {
     public partial class frMain : Form
     {
-        frLogin frlogin;
+        private frLogin frlogin;
+        private Form form;
         
         public frMain()
         {
@@ -36,19 +37,21 @@ namespace Sistema_Igreja
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            form?.Close();
             frlogin.ShowDialog();
         }
 
         private void membroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.ActiveMdiChild != null)
+            form?.Close();
+            form = new frRegister
             {
-                this.ActiveMdiChild.Close();
-            }
-
-            frRegister frregister = new frRegister();
-            frregister.MdiParent = this;
-            frregister.Show();
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+            pnAncoraForm.Controls.Add(form);
+            form.Show();
         }
     }
 }

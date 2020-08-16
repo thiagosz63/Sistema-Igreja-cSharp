@@ -19,9 +19,10 @@ namespace Sistema_Igreja.gui
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void frRegister_Load(object sender, EventArgs e)
         {
-
+            cmbSexo.Items.Add("M");
+            cmbSexo.Items.Add("F");
         }
 
         private void botaoIserir_Click(object sender, EventArgs e)
@@ -52,11 +53,6 @@ namespace Sistema_Igreja.gui
             {
                 MessageBox.Show("Não conectou" + erro);
             }
-        }
-        private void frRegister_Load(object sender, EventArgs e)
-        {
-            cmbSexo.Items.Add("M");
-            cmbSexo.Items.Add("F");
         }
     }
 }
