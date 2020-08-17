@@ -67,14 +67,14 @@
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
@@ -105,6 +105,7 @@
             this.igrejaToolStripMenuItem.Name = "igrejaToolStripMenuItem";
             this.igrejaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.igrejaToolStripMenuItem.Text = "Igreja";
+            this.igrejaToolStripMenuItem.Click += new System.EventHandler(this.igrejaToolStripMenuItem_Click);
             // 
             // visualizarToolStripMenuItem
             // 

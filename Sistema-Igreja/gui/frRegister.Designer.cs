@@ -32,6 +32,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmbCongregacao = new System.Windows.Forms.ComboBox();
+            this.txtRg = new System.Windows.Forms.MaskedTextBox();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -41,13 +44,10 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtRg = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtsituacao = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtcong = new System.Windows.Forms.TextBox();
-            this.txtCpf = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
@@ -114,6 +114,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.05128F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.564102F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.61539F));
+            this.tableLayoutPanel1.Controls.Add(this.cmbCongregacao, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtRg, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtCpf, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.cmbSexo, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label6, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtEmail, 5, 0);
@@ -123,13 +126,10 @@
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtCargo, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label7, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtRg, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label8, 4, 1);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtsituacao, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label11, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtcong, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtCpf, 5, 1);
             this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 179);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -139,6 +139,36 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 133);
             this.tableLayoutPanel1.TabIndex = 28;
+            // 
+            // cmbCongregacao
+            // 
+            this.cmbCongregacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbCongregacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbCongregacao.FormattingEnabled = true;
+            this.cmbCongregacao.Location = new System.Drawing.Point(318, 83);
+            this.cmbCongregacao.Name = "cmbCongregacao";
+            this.cmbCongregacao.Size = new System.Drawing.Size(126, 28);
+            this.cmbCongregacao.TabIndex = 35;
+            this.cmbCongregacao.Text = "Selecione";
+            // 
+            // txtRg
+            // 
+            this.txtRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRg.Location = new System.Drawing.Point(318, 43);
+            this.txtRg.Mask = "0.000.000";
+            this.txtRg.Name = "txtRg";
+            this.txtRg.Size = new System.Drawing.Size(126, 26);
+            this.txtRg.TabIndex = 34;
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpf.Location = new System.Drawing.Point(508, 43);
+            this.txtCpf.Mask = "000.000.000-00";
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(163, 26);
+            this.txtCpf.TabIndex = 33;
             // 
             // cmbSexo
             // 
@@ -230,13 +260,6 @@
             this.label7.TabIndex = 11;
             this.label7.Text = "Rg:";
             // 
-            // txtRg
-            // 
-            this.txtRg.Location = new System.Drawing.Point(318, 43);
-            this.txtRg.Name = "txtRg";
-            this.txtRg.Size = new System.Drawing.Size(126, 26);
-            this.txtRg.TabIndex = 14;
-            // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -276,20 +299,6 @@
             this.label11.Size = new System.Drawing.Size(105, 53);
             this.label11.TabIndex = 19;
             this.label11.Text = "Congregação:";
-            // 
-            // txtcong
-            // 
-            this.txtcong.Location = new System.Drawing.Point(318, 83);
-            this.txtcong.Name = "txtcong";
-            this.txtcong.Size = new System.Drawing.Size(126, 26);
-            this.txtcong.TabIndex = 20;
-            // 
-            // txtCpf
-            // 
-            this.txtCpf.Location = new System.Drawing.Point(508, 43);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(163, 26);
-            this.txtCpf.TabIndex = 15;
             // 
             // label1
             // 
@@ -421,13 +430,10 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtRg;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtsituacao;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtcong;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCod;
@@ -435,5 +441,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.MaskedTextBox txtCpf;
+        private System.Windows.Forms.MaskedTextBox txtRg;
+        private System.Windows.Forms.ComboBox cmbCongregacao;
     }
 }

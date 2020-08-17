@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Sistema_Igreja.gui;
+using Sistema_Igreja.model.dao.impl;
+using Sistema_Igreja.model.entitie;
 
 namespace Sistema_Igreja
 {
@@ -52,6 +54,11 @@ namespace Sistema_Igreja
             };
             pnAncoraForm.Controls.Add(form);
             form.Show();
+        }
+
+        private void igrejaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

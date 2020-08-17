@@ -1,6 +1,7 @@
 /* Sistema Igreja Assembleia de Deus Shekinah */
 
 create database IGREJA_SHEKINAH;
+use IGREJA_SHEKINAH;
 
 create table PESSOAS(
 	idpessoa int primary key auto_increment,
