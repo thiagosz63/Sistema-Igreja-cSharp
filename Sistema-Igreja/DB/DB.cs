@@ -14,29 +14,25 @@ namespace Sistema_Igreja.db
     class DB
     {
 
-        private MySqlConnection conn = new MySqlConnection();
-
-        //Construtor
-        public DB()
-        {
-            conn.ConnectionString = ("Server = 10.0.0.102; Port = 3306; Database = IGREJA_SHEKINAH; Uid = root; Pwd = 872037");
-
-
-        }
+        private static MySqlConnection conn = null;
 
         //Metodo Conectar
-        public  MySqlConnection conectar()
+        public static MySqlConnection conectar()
         {
-            try
+
+            if (conn == null)
             {
-                if (conn.State == System.Data.ConnectionState.Closed)
-                {
+                try
+                {              
+                    conn = new MySqlConnection();
+                    conn.ConnectionString = ("Server = 10.0.0.102; Port = 3306; Database = IGREJA_SHEKINAH; Uid = root; Pwd = 872037");
                     conn.Open();
+
                 }
-            }
-            catch (MySqlException e)
-            {
-                Alerts.showAlert(e.Message, "SqlException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (MySqlException e)
+                {
+                    Alerts.showAlert(e.Message, "MySqlException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
 
             return conn;
@@ -44,18 +40,19 @@ namespace Sistema_Igreja.db
         }
 
         //Metodo Desconectar
-        public  void desconectar()
+        public static void desconectar()
         {
-            try
+            if (conn != null)
             {
-                if (conn.State == System.Data.ConnectionState.Open)
-                {
+                try
+                {             
                     conn.Close();
+                    conn = null;
                 }
-            }
-            catch (MySqlException e)
-            {
-                 Alerts.showAlert(e.Message, "SqlException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                catch (MySqlException e)
+                {
+                    Alerts.showAlert(e.Message, "MySqlException", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
     }

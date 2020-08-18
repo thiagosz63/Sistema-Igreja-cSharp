@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Sistema_Igreja.gui;
 using Sistema_Igreja.gui.util;
+using Sistema_Igreja.model.dao;
 using Sistema_Igreja.model.dao.impl;
 using Sistema_Igreja.model.entitie;
 
@@ -29,12 +30,23 @@ namespace Sistema_Igreja.gui
             cmbCongregacao.Items.Add("1");
         }
 
-        private void botaoIserir_Click(object sender, EventArgs e)
+        private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Register register = new Register(txtNome.Text, cmbSexo.SelectedItem.ToString(), txtEstCivil.Text, txtEmail.Text,txtCargo.Text, txtRg.Text, txtCpf.Text,txtsituacao.Text, int.Parse(cmbCongregacao.SelectedItem.ToString()));
-            RegisterOpercao registeroperacao = new RegisterOpercao();
-            registeroperacao.insert(register);
-            Alerts.showAlert("Cadastro Realizado com Sucesso", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Register register = new Register(Utils.tryParseToInt(txtCod.Text),txtNome.Text, cmbSexo.SelectedItem.ToString(),
+                txtEstCivil.Text, txtEmail.Text,txtCargo.Text, txtRg.Text, txtCpf.Text,txtsituacao.Text, Utils.tryParseToInt(cmbCongregacao.Text));
+            RegisterDao registeroperacao = new RegisterOpercao();
+
+            if (Utils.tryParseToInt(txtCod.Text) == null)
+            {
+                
+                registeroperacao.insert(register);
+            }
+            else
+            {
+                registeroperacao.update(register);
+            }
+            
+          
             
         }
     }

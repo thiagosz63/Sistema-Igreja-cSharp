@@ -51,7 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
-            this.botaoIserir = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
@@ -156,7 +156,7 @@
             // 
             this.txtRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRg.Location = new System.Drawing.Point(318, 43);
-            this.txtRg.Mask = "0.000.000";
+            this.txtRg.Mask = "0,000,000";
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(126, 26);
             this.txtRg.TabIndex = 34;
@@ -165,7 +165,7 @@
             // 
             this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCpf.Location = new System.Drawing.Point(508, 43);
-            this.txtCpf.Mask = "000.000.000-00";
+            this.txtCpf.Mask = "000,000,000-00";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(163, 26);
             this.txtCpf.TabIndex = 33;
@@ -332,17 +332,17 @@
             this.txtCod.Size = new System.Drawing.Size(89, 26);
             this.txtCod.TabIndex = 26;
             // 
-            // botaoIserir
+            // btnSalvar
             // 
-            this.botaoIserir.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.botaoIserir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.botaoIserir.Location = new System.Drawing.Point(318, 3);
-            this.botaoIserir.Name = "botaoIserir";
-            this.botaoIserir.Size = new System.Drawing.Size(140, 33);
-            this.botaoIserir.TabIndex = 27;
-            this.botaoIserir.Text = "Inserir";
-            this.botaoIserir.UseVisualStyleBackColor = true;
-            this.botaoIserir.Click += new System.EventHandler(this.botaoIserir_Click);
+            this.btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(318, 3);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(140, 33);
+            this.btnSalvar.TabIndex = 27;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -381,7 +381,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.botaoIserir, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.btnSalvar, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(12, 339);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
@@ -437,7 +437,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCod;
-        private System.Windows.Forms.Button botaoIserir;
+        private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;

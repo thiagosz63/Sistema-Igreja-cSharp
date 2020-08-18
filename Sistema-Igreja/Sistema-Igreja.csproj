@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="DB\DB.cs" />
     <Compile Include="gui.util\Alerts.cs" />
+    <Compile Include="gui.util\Utils.cs" />
     <Compile Include="gui\frLogin.cs">
       <SubType>Form</SubType>
     </Compile>

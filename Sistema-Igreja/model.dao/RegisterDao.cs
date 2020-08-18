@@ -8,7 +8,7 @@ namespace Sistema_Igreja.model.dao
     {
         void insert(Register obj);
         void update(Register obj);
-        void deleteById(int id);
+        void deleteById(Register obj);
         Register findById(int id);
         List<Register> findAll();
         //List<Register> findByDepartment(Department department);
