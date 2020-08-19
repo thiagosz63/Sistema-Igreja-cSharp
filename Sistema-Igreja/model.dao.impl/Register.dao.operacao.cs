@@ -22,9 +22,9 @@ namespace Sistema_Igreja.model.dao.impl
             try
             {
                 
-                cmd.CommandText = "insert into pessoas (nome, sexo, estado_civil, email, rg, cpf, cargo, situacao," +
+                cmd.CommandText = "insert into pessoas (nome, sexo, estado_civil, email, rg, cpf, cargo, nascimento, situacao," +
                                     " id_igrejas) " +
-                                    "values(?,?,?,?,?,?,?,?,?)";
+                                    "values(?,?,?,?,?,?,?,?,?,?)";
 
                 
                 cmd.Parameters.Add("1", MySqlDbType.VarChar, 50).Value = obj.Nome;
@@ -36,6 +36,7 @@ namespace Sistema_Igreja.model.dao.impl
                 cmd.Parameters.Add("7", MySqlDbType.VarChar, 30).Value = obj.Cargo;
                 cmd.Parameters.Add("8", MySqlDbType.VarChar, 30).Value = obj.Situacao;
                 cmd.Parameters.Add("9", MySqlDbType.Int16, 5).Value = obj.Congregacao;
+                cmd.Parameters.Add("10", MySqlDbType.Date).Value = obj.Nascimento;
 
                 cmd.Connection = DB.conectar();
                 cmd.ExecuteNonQuery();
@@ -63,7 +64,7 @@ namespace Sistema_Igreja.model.dao.impl
             try
             {
                 cmd.CommandText = "UPDATE igreja_shekinah.pessoas SET nome = ?, sexo = ?, estado_civil = ?, email = ?, " +
-                                     "rg = ?, cpf = ?, cargo = ?, situacao = ?, id_igrejas = ? WHERE(idpessoa = ?)";
+                                     "rg = ?, cpf = ?, cargo = ?, situacao = ?, nascimento = ?, id_igrejas = ? WHERE(idpessoa = ?)";
 
                 cmd.Parameters.Add("1", MySqlDbType.VarChar, 50).Value = obj.Nome;
                 cmd.Parameters.Add("2", MySqlDbType.VarChar, 1).Value = obj.Sexo;
@@ -74,7 +75,8 @@ namespace Sistema_Igreja.model.dao.impl
                 cmd.Parameters.Add("7", MySqlDbType.VarChar, 30).Value = obj.Cargo;
                 cmd.Parameters.Add("8", MySqlDbType.VarChar, 30).Value = obj.Situacao;
                 cmd.Parameters.Add("9", MySqlDbType.Int16, 5).Value = obj.Congregacao;
-                cmd.Parameters.Add("10", MySqlDbType.Int16, 5).Value = obj.Cod;
+                cmd.Parameters.Add("10", MySqlDbType.Date).Value = obj.Nascimento;
+                cmd.Parameters.Add("11", MySqlDbType.Int16, 5).Value = obj.Cod;
 
                 cmd.Connection = DB.conectar();
                 cmd.ExecuteNonQuery();

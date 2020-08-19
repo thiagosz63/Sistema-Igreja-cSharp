@@ -27,13 +27,12 @@ namespace Sistema_Igreja.gui
         {
             cmbSexo.Items.Add("M");
             cmbSexo.Items.Add("F");
-            cmbCongregacao.Items.Add("1");
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             Register register = new Register(Utils.tryParseToInt(txtCod.Text),txtNome.Text, cmbSexo.SelectedItem.ToString(),
-                txtEstCivil.Text, txtEmail.Text,txtCargo.Text, txtRg.Text, txtCpf.Text,txtsituacao.Text, Utils.tryParseToInt(cmbCongregacao.Text));
+                txtEstCivil.Text, txtEmail.Text,txtCargo.Text, txtRg.Text, txtCpf.Text, txtsituacao.Text,dateNascimento.CustomFormat,Utils.tryParseToInt(cmbCongregacao.Text));
             RegisterDao registeroperacao = new RegisterOpercao();
 
             if (Utils.tryParseToInt(txtCod.Text) == null)

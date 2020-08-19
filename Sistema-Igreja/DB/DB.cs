@@ -25,7 +25,7 @@ namespace Sistema_Igreja.db
                 try
                 {              
                     conn = new MySqlConnection();
-                    conn.ConnectionString = ("Server = 10.0.0.102; Port = 3306; Database = IGREJA_SHEKINAH; Uid = root; Pwd = 872037");
+                    conn.ConnectionString = ("Server = localhost; Port = 3306; Database = IGREJA_SHEKINAH; Uid = root; Pwd = 3226");
                     conn.Open();
 
                 }
