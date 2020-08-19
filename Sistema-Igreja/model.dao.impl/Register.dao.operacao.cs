@@ -34,9 +34,10 @@ namespace Sistema_Igreja.model.dao.impl
                 cmd.Parameters.Add("5", MySqlDbType.VarChar, 15).Value = obj.Rg;
                 cmd.Parameters.Add("6", MySqlDbType.VarChar, 15).Value = obj.Cpf;
                 cmd.Parameters.Add("7", MySqlDbType.VarChar, 30).Value = obj.Cargo;
-                cmd.Parameters.Add("8", MySqlDbType.VarChar, 30).Value = obj.Situacao;
-                cmd.Parameters.Add("9", MySqlDbType.Int16, 5).Value = obj.Congregacao;
-                cmd.Parameters.Add("10", MySqlDbType.Date).Value = obj.Nascimento;
+                cmd.Parameters.Add("8", MySqlDbType.Date).Value = obj.Nascimento;
+                cmd.Parameters.Add("9", MySqlDbType.VarChar, 30).Value = obj.Situacao;
+                cmd.Parameters.Add("10", MySqlDbType.Int16, 5).Value = obj.Congregacao;
+                
 
                 cmd.Connection = DB.conectar();
                 cmd.ExecuteNonQuery();
