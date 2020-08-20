@@ -13,7 +13,6 @@ create table PESSOAS(
 	cpf varchar(15) not null unique,
 	cargo varchar (30) not null,
 	situacao varchar (30) not null,
-    nascimento datetime not null,
 	id_igrejas int not null 
 );
 

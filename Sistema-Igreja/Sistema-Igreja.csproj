@@ -66,11 +66,17 @@
     <Compile Include="gui\frMain.Designer.cs">
       <DependentUpon>frMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="gui\frRegister.cs">
+    <Compile Include="gui\frRegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="gui\frRegister.Designer.cs">
-      <DependentUpon>frRegister.cs</DependentUpon>
+    <Compile Include="gui\frRegisterForm.Designer.cs">
+      <DependentUpon>frRegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\frRegisterList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\frRegisterList.Designer.cs">
+      <DependentUpon>frRegisterList.cs</DependentUpon>
     </Compile>
     <Compile Include="model.dao.impl\Register.dao.operacao.cs" />
     <Compile Include="model.dao\RegisterDao.cs" />
@@ -83,8 +89,11 @@
     <EmbeddedResource Include="gui\frMain.resx">
       <DependentUpon>frMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="gui\frRegister.resx">
-      <DependentUpon>frRegister.cs</DependentUpon>
+    <EmbeddedResource Include="gui\frRegisterForm.resx">
+      <DependentUpon>frRegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\frRegisterList.resx">
+      <DependentUpon>frRegisterList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -118,11 +127,6 @@
   <ItemGroup>
     <None Include="icones\Capturar.PNG" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\teste 01.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\teste 02.jpg" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -46,7 +46,7 @@ namespace Sistema_Igreja
         private void membroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             form?.Close();
-            form = new frRegister
+            form = new frRegisterList
             {
                 TopLevel = false,
                 FormBorderStyle = FormBorderStyle.None,
