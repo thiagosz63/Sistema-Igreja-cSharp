@@ -13,12 +13,12 @@ create table PESSOAS(
 	cpf varchar(15) not null unique,
 	cargo varchar (30) not null,
 	situacao varchar (30) not null,
-	id_igrejas int not null 
+	id_congregacao varchar (50) not null 
 );
 
 create table IGREJAS(
 	idigrejas int primary key auto_increment,
-	congregacao varchar (50) not null,
+	congregacao varchar (50) not null unique,
 	dirigente varchar(30) not null
 );
 
@@ -55,8 +55,8 @@ create table USUARIO(
 
 alter table PESSOAS 
 add constraint FK_PESSOAS_IGREJAS
-foreign key(id_igrejas)
-references IGREJAS(idigrejas);
+foreign key(id_congregacao)
+references IGREJAS(congregacao);
 
 alter table TELEFONE 
 add constraint FK_TELEFONE_PESSOAS

@@ -15,7 +15,7 @@ namespace Sistema_Igreja.gui.util
                 return int.Parse(str);
 
             }
-            catch (FormatException e)
+            catch (FormatException)
             {
 
                 return null;

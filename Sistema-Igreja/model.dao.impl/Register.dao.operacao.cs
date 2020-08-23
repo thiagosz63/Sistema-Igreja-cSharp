@@ -14,18 +14,20 @@ using Sistema_Igreja.model.entitie;
 namespace Sistema_Igreja.model.dao.impl
 {
     class RegisterOpercao : RegisterDao
+
     {
 
         MySqlCommand cmd = new MySqlCommand();
+       
 
 
-        public void insert(entitie.Register obj)
+        public int insert(entitie.Register obj)
         {
             try
             {
 
                 cmd.CommandText = "insert into pessoas (nome, sexo, estado_civil, email, rg, cpf, cargo, situacao," +
-                                    " id_igrejas) " +
+                                    " id_congregacao) " +
                                     "values(?,?,?,?,?,?,?,?,?)";
 
 
@@ -37,19 +39,19 @@ namespace Sistema_Igreja.model.dao.impl
                 cmd.Parameters.Add("6", MySqlDbType.VarChar, 15).Value = obj.Cpf;
                 cmd.Parameters.Add("7", MySqlDbType.VarChar, 30).Value = obj.Cargo;
                 cmd.Parameters.Add("8", MySqlDbType.VarChar, 30).Value = obj.Situacao;
-                cmd.Parameters.Add("9", MySqlDbType.Int16, 5).Value = obj.Congregacao;
+                cmd.Parameters.Add("9", MySqlDbType.VarChar, 30).Value = obj.Congregacao;
 
                 cmd.Connection = DB.conectar();
                 cmd.ExecuteNonQuery();
 
+
                 Alerts.showAlert("Dados Cadastrados com Sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
-
+                return 1;
             }
             catch (Exception e)
             {
                 Alerts.showAlert(e.Message, "Falha ao inserir", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
             }
             finally
             {
@@ -65,7 +67,7 @@ namespace Sistema_Igreja.model.dao.impl
             try
             {
                 cmd.CommandText = "UPDATE igreja_shekinah.pessoas SET nome = ?, sexo = ?, estado_civil = ?, email = ?, " +
-                                     "rg = ?, cpf = ?, cargo = ?, situacao = ?, id_igrejas = ? WHERE(idpessoa = ?)";
+                                     "rg = ?, cpf = ?, cargo = ?, situacao = ?, id_congregacao = ? WHERE(idpessoa = ?)";
 
                 cmd.Parameters.Add("1", MySqlDbType.VarChar, 50).Value = obj.Nome;
                 cmd.Parameters.Add("2", MySqlDbType.VarChar, 1).Value = obj.Sexo;
@@ -75,7 +77,7 @@ namespace Sistema_Igreja.model.dao.impl
                 cmd.Parameters.Add("6", MySqlDbType.VarChar, 15).Value = obj.Cpf;
                 cmd.Parameters.Add("7", MySqlDbType.VarChar, 30).Value = obj.Cargo;
                 cmd.Parameters.Add("8", MySqlDbType.VarChar, 30).Value = obj.Situacao;
-                cmd.Parameters.Add("9", MySqlDbType.Int16, 5).Value = obj.Congregacao;
+                cmd.Parameters.Add("9", MySqlDbType.VarChar, 30).Value = obj.Congregacao;
                 cmd.Parameters.Add("10", MySqlDbType.Int16, 5).Value = obj.Cod;
 
                 cmd.Connection = DB.conectar();
@@ -96,15 +98,15 @@ namespace Sistema_Igreja.model.dao.impl
             }
 
         }
-        public void deleteById(Register obj)
+        public void deleteById(int? obj)
         {
             try
             {
                 cmd.CommandText = "DELETE FROM igreja_shekinah.pessoas WHERE(idpessoa = ?)";
-                cmd.Parameters.Add("1", MySqlDbType.Int16, 5).Value = obj.Cod;
+                cmd.Parameters.Add("1", MySqlDbType.Int16, 5).Value = obj;
                 cmd.Connection = DB.conectar();
                 cmd.ExecuteNonQuery();
-                Alerts.showAlert("Dados Deletado com Sucesso", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (Exception e)
             {
@@ -116,25 +118,19 @@ namespace Sistema_Igreja.model.dao.impl
             }
 
         }
-        public entitie.Register findById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataTable select()
+        public DataSet findByComboBox()
         {
             try
             {
-                //  cmd.CommandText = "select pessoas.*, igrejas.congregacao, igrejas.dirigente " +
-                //      "from pessoas inner join igrejas on igrejas.idigrejas = pessoas.id_igrejas";
-                cmd.CommandText = "SELECT * FROM pessoas";
-                cmd.Connection = DB.conectar();         
-                MySqlDataAdapter dt = new MySqlDataAdapter(cmd);
-                dt.SelectCommand.CommandType = CommandType.StoredProcedure;
-                DataTable datatable = new DataTable();
-                dt.Fill(datatable);
 
-                return datatable;
+                cmd.CommandText = "SELECT * FROM igrejas";
+                cmd.Connection = DB.conectar();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+
+
             }
             catch (Exception)
             {
@@ -145,7 +141,36 @@ namespace Sistema_Igreja.model.dao.impl
             {
                 DB.desconectar();
             }
-            
+
         }
+
+        public DataSet findAll()
+        {
+            try
+            {
+
+                cmd.CommandText = "select pessoas.*,igrejas.dirigente from pessoas" +
+                                  " inner join igrejas on  congregacao = pessoas.id_congregacao";
+                cmd.Connection = DB.conectar();
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                DB.desconectar();
+            }
+
+        }
+
+       
     }
 }

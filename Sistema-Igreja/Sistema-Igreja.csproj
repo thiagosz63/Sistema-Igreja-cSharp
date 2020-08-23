@@ -127,6 +127,8 @@
   <ItemGroup>
     <None Include="icones\Capturar.PNG" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\delete-file_40456.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

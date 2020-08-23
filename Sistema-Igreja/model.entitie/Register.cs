@@ -17,10 +17,10 @@ namespace Sistema_Igreja.model.entitie
         private String rg;
         private String cpf;
         private String situacao;
-        private int? congregacao;
+        private String congregacao;
 
         public Register(int? cod, String nome, String sexo, String estadoCivil, String email, String cargo, String rg,
-            String cpf, String situacao, int? congregacao)
+            String cpf, String situacao, String congregacao)
         {
             this.cod = cod;
             this.nome = nome;
@@ -44,7 +44,7 @@ namespace Sistema_Igreja.model.entitie
         public string Rg { get => rg; set => rg = value; }
         public string Cpf { get => cpf; set => cpf = value; }
         public string Situacao { get => situacao; set => situacao = value; }
-        public int? Congregacao { get => congregacao; set => congregacao = value; }
+        public string Congregacao { get => congregacao; set => congregacao = value; }
 
         public override string ToString()
         {

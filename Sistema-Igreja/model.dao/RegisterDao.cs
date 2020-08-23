@@ -8,11 +8,11 @@ namespace Sistema_Igreja.model.dao
 {
     interface RegisterDao
     {
-        void insert(Register obj);
+        int insert(Register obj);
         void update(Register obj);
-        void deleteById(Register obj);
-        Register findById(int id); 
-        DataTable select();
+        void deleteById(int? obj);
+        DataSet findByComboBox();
+        DataSet findAll();
         //List<Register> findByDepartment(Department department);
     }
 }

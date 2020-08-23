@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using Sistema_Igreja.gui;
 using Sistema_Igreja.gui.util;
 using Sistema_Igreja.model.dao;
 using Sistema_Igreja.model.dao.impl;
@@ -18,6 +17,7 @@ namespace Sistema_Igreja.gui
 {
     public partial class frRegisterForm : Form
     {
+        RegisterDao registeroperacao = new RegisterOpercao();
         public frRegisterForm()
         {
             InitializeComponent();
@@ -25,31 +25,39 @@ namespace Sistema_Igreja.gui
 
         private void frRegister_Load(object sender, EventArgs e)
         {
-            cmbSexo.Items.Add("M");
-            cmbSexo.Items.Add("F");
-            cmbCongregacao.Items.Add("1");
+            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            Register register = new Register(Utils.tryParseToInt(txtCod.Text),txtNome.Text, cmbSexo.SelectedItem.ToString(),
-                txtEstCivil.Text, txtEmail.Text,txtCargo.Text, txtRg.Text, txtCpf.Text,txtsituacao.Text, Utils.tryParseToInt(cmbCongregacao.Text));
-            RegisterDao registeroperacao = new RegisterOpercao();
+            Register register = new Register(Utils.tryParseToInt(txtCod.Text),txtNome.Text, cmbSexo.Text,
+                txtEstCivil.Text, txtEmail.Text,txtCargo.Text, txtRg.Text, txtCpf.Text,txtsituacao.Text,cmbCongregacao.Text);
+            
 
             if (Utils.tryParseToInt(txtCod.Text) == null)
             {
-               
-                registeroperacao.insert(register);
+
+                if (registeroperacao.insert(register) == 1)
+                {
+                    clearForm();
+                    carregarComboBox();
+                }
             }
             else
             {
                 registeroperacao.update(register);
+                this.Close();
             }
-            clearForm();
+            
 
         }
 
-        private void clearForm()
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public void clearForm()
         {
             txtCod.Text = null;
             txtNome.Text = null;
@@ -58,12 +66,32 @@ namespace Sistema_Igreja.gui
             txtCargo.Text = null;
             txtRg.Text = null;
             txtCpf.Text = null;
-            txtsituacao.Text = null;  
+            txtsituacao.Text = null;
+            cmbSexo.Items.Clear();
+            cmbCongregacao.DataSource = null;
+           
+            
+            
+        }
+        public void carregarComboBox()
+        {
+            cmbSexo.Text = "Selecione";
+            cmbCongregacao.Text = "Selecione";        
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void cmbCongregacao_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            cmbCongregacao.DataSource = registeroperacao.findByComboBox().Tables[0];
+            cmbCongregacao.DisplayMember = "congregacao";
+            
+        }
+
+        private void cmbSexo_Click(object sender, EventArgs e)
+        {
+            cmbSexo.Items.Clear();
+            cmbSexo.Items.Add("M");
+            cmbSexo.Items.Add("F");
         }
     }
 }

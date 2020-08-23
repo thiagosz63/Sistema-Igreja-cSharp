@@ -48,7 +48,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtsituacao = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblView = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtCod = new System.Windows.Forms.TextBox();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -151,7 +151,7 @@
             this.cmbCongregacao.Name = "cmbCongregacao";
             this.cmbCongregacao.Size = new System.Drawing.Size(126, 28);
             this.cmbCongregacao.TabIndex = 35;
-            this.cmbCongregacao.Text = "Selecione";
+            this.cmbCongregacao.Click += new System.EventHandler(this.cmbCongregacao_Click);
             // 
             // txtRg
             // 
@@ -178,7 +178,7 @@
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(93, 28);
             this.cmbSexo.TabIndex = 5;
-            this.cmbSexo.Text = "Selecione";
+            this.cmbSexo.Click += new System.EventHandler(this.cmbSexo_Click);
             // 
             // label6
             // 
@@ -301,18 +301,18 @@
             this.label11.TabIndex = 19;
             this.label11.Text = "Congregação:";
             // 
-            // label1
+            // lblView
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblView.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(767, 25);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Cadastro";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblView.AutoSize = true;
+            this.lblView.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblView.Location = new System.Drawing.Point(3, 0);
+            this.lblView.Name = "lblView";
+            this.lblView.Size = new System.Drawing.Size(767, 25);
+            this.lblView.TabIndex = 24;
+            this.lblView.Text = "Cadastro";
+            this.lblView.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
             // 
@@ -330,6 +330,7 @@
             this.txtCod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCod.Location = new System.Drawing.Point(84, 3);
             this.txtCod.Name = "txtCod";
+            this.txtCod.ReadOnly = true;
             this.txtCod.Size = new System.Drawing.Size(89, 26);
             this.txtCod.TabIndex = 26;
             // 
@@ -368,7 +369,7 @@
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblView, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
@@ -415,7 +416,6 @@
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frRegisterForm";
-            this.Text = "frRegister";
             this.Load += new System.EventHandler(this.frRegister_Load);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -432,33 +432,34 @@
 
         #endregion
 
+       
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtEstCivil;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtsituacao;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.MaskedTextBox txtCpf;
-        private System.Windows.Forms.MaskedTextBox txtRg;
-        private System.Windows.Forms.ComboBox cmbCongregacao;
+        public System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.ComboBox cmbSexo;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtEstCivil;
+        public System.Windows.Forms.TextBox txtCargo;
+        public System.Windows.Forms.TextBox txtsituacao;
+        public System.Windows.Forms.TextBox txtCod;
+        public System.Windows.Forms.MaskedTextBox txtCpf;
+        public System.Windows.Forms.MaskedTextBox txtRg;
+        public System.Windows.Forms.ComboBox cmbCongregacao;
+        public System.Windows.Forms.Label lblView;
     }
 }

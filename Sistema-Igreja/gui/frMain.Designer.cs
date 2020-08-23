@@ -36,7 +36,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.membroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.igrejaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.visualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnAncoraForm = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
@@ -47,7 +46,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.inicioToolStripMenuItem,
             this.cadastrarToolStripMenuItem,
-            this.visualizarToolStripMenuItem,
             this.ajudaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -85,8 +83,8 @@
             this.membroToolStripMenuItem,
             this.igrejaToolStripMenuItem});
             this.cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.cadastrarToolStripMenuItem.Text = "Cadastrar";
+            this.cadastrarToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.cadastrarToolStripMenuItem.Text = "Visualizar";
             // 
             // toolStripSeparator1
             // 
@@ -106,12 +104,6 @@
             this.igrejaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.igrejaToolStripMenuItem.Text = "Igreja";
             this.igrejaToolStripMenuItem.Click += new System.EventHandler(this.igrejaToolStripMenuItem_Click);
-            // 
-            // visualizarToolStripMenuItem
-            // 
-            this.visualizarToolStripMenuItem.Name = "visualizarToolStripMenuItem";
-            this.visualizarToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.visualizarToolStripMenuItem.Text = "Visualizar";
             // 
             // ajudaToolStripMenuItem
             // 
@@ -154,7 +146,6 @@
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem visualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem membroToolStripMenuItem;

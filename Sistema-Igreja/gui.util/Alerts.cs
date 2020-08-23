@@ -12,9 +12,15 @@ namespace Sistema_Igreja.gui.util
       
         public static void showAlert(String mensagem, string titulo, MessageBoxButtons buttons, MessageBoxIcon icon)
         {
+             MessageBox.Show(mensagem, titulo, buttons, icon);
+
+        }
+
+        public static DialogResult showAlertResult(String mensagem, string titulo, MessageBoxButtons buttons, MessageBoxIcon icon)
+        {
             DialogResult result;
             result = MessageBox.Show(mensagem, titulo, buttons, icon);
-
+            return result;
         }
     }
 }

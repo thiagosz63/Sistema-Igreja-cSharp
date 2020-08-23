@@ -1,4 +1,5 @@
-﻿using Sistema_Igreja.model.dao;
+﻿using Sistema_Igreja.gui.util;
+using Sistema_Igreja.model.dao;
 using Sistema_Igreja.model.dao.impl;
 using Sistema_Igreja.model.entitie;
 using System;
@@ -15,6 +16,8 @@ namespace Sistema_Igreja.gui
 {
     public partial class frRegisterList : Form
     {
+        frRegisterForm registerform = new frRegisterForm();
+        
         public frRegisterList()
         {
             InitializeComponent();
@@ -22,22 +25,93 @@ namespace Sistema_Igreja.gui
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            frRegisterForm registerform = new frRegisterForm();
-            registerform.StartPosition = FormStartPosition.CenterScreen;
-            registerform.ShowDialog();
+            registerform.clearForm();
+            registerform.carregarComboBox();
+            registerform.lblView.Text = "Cadastrar";
+            chamarForm();
+            ChamarDataGridView();
         }
 
         private void frRegisterList_Load(object sender, EventArgs e)
         {
-            try
+            ChamarDataGridView();
+        }
+
+        private void dgvFrRegister_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == this.editar.Index && e.RowIndex >= 0)
             {
-                RegisterDao registeroperacao = new RegisterOpercao();
-                dgvFrRegister.DataSource = registeroperacao.select();
+                // pega a linha atual...
+                DataGridViewRow currentRow = this.dgvFrRegister.Rows[e.RowIndex];
+                registerform.clearForm();
+                // mostra o form...
+                povoandoForm();
+                chamarForm();
+                ChamarDataGridView();
             }
-            catch(Exception errpor)
+
+            if (e.ColumnIndex == this.excluir.Index && e.RowIndex >= 0)
             {
-                MessageBox.Show(errpor.Message);
+                // pega a linha atual...
+                DataGridViewRow currentRow = this.dgvFrRegister.Rows[e.RowIndex];
+                registerform.clearForm();
+                // mostra o form...
+                var result = Alerts.showAlertResult("Tem certeza que deseja Apagar " + dgvFrRegister.SelectedCells[3].Value.ToString() + ". Está operação será inrreverssivel", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+                if (result == DialogResult.OK)
+                { 
+                   int? id = Utils.tryParseToInt(dgvFrRegister.SelectedCells[2].Value.ToString());
+                    RegisterDao registerOpercao = new RegisterOpercao();
+                    registerOpercao.deleteById(id);
+                    ChamarDataGridView();
+                }
             }
         }
+
+        private void ChamarDataGridView()
+        {
+            try
+            {
+                RegisterDao ds = new RegisterOpercao();
+                dgvFrRegister.DataSource = ds.findAll();
+                dgvFrRegister.DataMember = ds.findAll().Tables[0].TableName;
+
+                dgvFrRegister.Columns[2].HeaderText = "Codigo";
+                dgvFrRegister.Columns[3].HeaderText = "Nome";
+                dgvFrRegister.Columns[11].HeaderText = "Congregação";
+                dgvFrRegister.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dgvFrRegister.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        
+        private void chamarForm()
+        {
+            registerform.StartPosition = FormStartPosition.CenterScreen;
+            registerform.ShowDialog();
+        }
+        private void povoandoForm()
+        {
+
+            registerform.txtCod.Text = dgvFrRegister.SelectedCells[2].Value.ToString();
+            registerform.txtNome.Text = dgvFrRegister.SelectedCells[3].Value.ToString();
+            registerform.cmbSexo.Text = dgvFrRegister.SelectedCells[4].Value.ToString();
+            registerform.txtEstCivil.Text = dgvFrRegister.SelectedCells[5].Value.ToString();
+            registerform.txtEmail.Text = dgvFrRegister.SelectedCells[6].Value.ToString();
+            registerform.txtRg.Text = dgvFrRegister.SelectedCells[7].Value.ToString();
+            registerform.txtCpf.Text = dgvFrRegister.SelectedCells[8].Value.ToString();
+            registerform.txtCargo.Text = dgvFrRegister.SelectedCells[9].Value.ToString();
+            registerform.txtsituacao.Text = dgvFrRegister.SelectedCells[10].Value.ToString();
+            registerform.cmbCongregacao.Text = dgvFrRegister.SelectedCells[11].Value.ToString();
+            registerform.lblView.Text = "Atualizar";
+
+        }
+
     }
 }
+
