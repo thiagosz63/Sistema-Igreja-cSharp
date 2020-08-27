@@ -124,8 +124,7 @@
             // 
             // dataGridViewImageColumn1
             // 
-            this.dataGridViewImageColumn1.HeaderText = "Column3";
-            this.dataGridViewImageColumn1.Image = global::Sistema_Igreja.Properties.Resources.delete_file_40456;
+            this.dataGridViewImageColumn1.HeaderText = "Column3";      
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 54;
             // 

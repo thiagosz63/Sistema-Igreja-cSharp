@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sistema_Igreja.model.dao
 {
-    interface RegisterIgrejaDao
+    interface IgrejaDao
     {
         int insertIgreja(RegisterIgreja obj);
         void updateIgreja(RegisterIgreja obj);

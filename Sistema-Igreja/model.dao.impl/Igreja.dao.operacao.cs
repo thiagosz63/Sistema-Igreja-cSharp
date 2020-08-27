@@ -11,7 +11,7 @@ using Sistema_Igreja.gui.util;
 
 namespace Sistema_Igreja.model.dao.impl
 {
-    class RegisterIgreja : RegisterIgrejaDao
+    class RegisterIgreja : IgrejaDao
     {
         MySqlCommand cmd = new MySqlCommand();
 

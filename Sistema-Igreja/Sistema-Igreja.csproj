@@ -91,9 +91,9 @@
       <DependentUpon>frRegisterList.cs</DependentUpon>
     </Compile>
     <Compile Include="model.dao.impl\Register.dao.operacao.cs" />
-    <Compile Include="model.dao.impl\RegisterIgreja.dao.operacao.cs" />
+    <Compile Include="model.dao.impl\Igreja.dao.operacao.cs" />
     <Compile Include="model.dao\RegisterDao.cs" />
-    <Compile Include="model.dao\RegisterIgrejaDao.cs" />
+    <Compile Include="model.dao\IgrejaDao.cs" />
     <Compile Include="model.entitie\Register.cs" />
     <Compile Include="model.entitie\RegisterIgreja.cs" />
     <Compile Include="Program.cs" />
@@ -118,18 +118,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -146,34 +146,17 @@
     <None Include="icones\Capturar.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\delete-file_40456.ico" />
+    <None Include="icones\igreja.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\kisspng-computer-icons-teamwork-icon-design-teamwork-icon-5b4bca1c6e8328.6292423315316935964527.png" />
+    <None Include="icones\register.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\kisspng-bible-christian-church-pastor-computer-icons-church-5abf9b8fa3bb48.8586654315225066396707.png" />
+    <None Include="icones\ajuda.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ajuda.png" />
+    <None Include="icones\abrir.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\pessoas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\NicePng_user-icon-png_1280406.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\kisspng-computer-icons-favicon-clip-art-exit-free-png-icon-5ab071f3dd56d3.4912925015215129479066 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\89013.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\kisspng-door-computer-icons-lock-key-exit-5aca61f9300381.1306238215232127931967.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\kisspng-black-white-m-clip-art-product-design-line-help-svg-png-icon-free-download-169-24-online-5cf4f294daca45.3860031115595567568962.png" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

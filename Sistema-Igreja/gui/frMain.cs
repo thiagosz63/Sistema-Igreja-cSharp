@@ -31,33 +31,42 @@ namespace Sistema_Igreja
             frlogin.ShowDialog();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        /* private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+             this.Close();
+         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+         {
             this.Visible = false;
-            form?.Close();
-            frlogin.ShowDialog();
-        }
-        private void igrejaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+             form?.Close();
+             frlogin.ShowDialog();
+         }*/
 
-        }
 
         private void btnCadastroPessoas_Click(object sender, EventArgs e)
         {
-            frRegisterList chamar = new frRegisterList();
-            this.Hide();
-            chamar.ShowDialog();
+            form?.Close();
+            form = new frRegisterList
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+            pnAncoraForm.Controls.Add(form);
+            form.Show();
         }
         private void btnIgrejas_Click(object sender, EventArgs e)
         {
-            frIgrejaList chamar2 = new frIgrejaList();
-            this.Hide();
-            chamar2.ShowDialog();
+            form?.Close();
+            form = new frIgrejaList
+            {
+                TopLevel = false,
+                FormBorderStyle = FormBorderStyle.None,
+                Dock = DockStyle.Fill
+            };
+            pnAncoraForm.Controls.Add(form);
+            form.Show();
         }
     }
 }
