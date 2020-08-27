@@ -18,7 +18,7 @@ namespace Sistema_Igreja
     {
         private frLogin frlogin;
         private Form form;
-        
+
         public frMain()
         {
             InitializeComponent();
@@ -42,23 +42,22 @@ namespace Sistema_Igreja
             form?.Close();
             frlogin.ShowDialog();
         }
-
-        private void membroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            form?.Close();
-            form = new frRegisterList
-            {
-                TopLevel = false,
-                FormBorderStyle = FormBorderStyle.None,
-                Dock = DockStyle.Fill
-            };
-            pnAncoraForm.Controls.Add(form);
-            form.Show();
-        }
-
         private void igrejaToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCadastroPessoas_Click(object sender, EventArgs e)
+        {
+            frRegisterList chamar = new frRegisterList();
+            this.Hide();
+            chamar.ShowDialog();
+        }
+        private void btnIgrejas_Click(object sender, EventArgs e)
+        {
+            frIgrejaList chamar2 = new frIgrejaList();
+            this.Hide();
+            chamar2.ShowDialog();
         }
     }
 }

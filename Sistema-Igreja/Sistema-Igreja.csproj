@@ -54,6 +54,18 @@
     <Compile Include="DB\DB.cs" />
     <Compile Include="gui.util\Alerts.cs" />
     <Compile Include="gui.util\Utils.cs" />
+    <Compile Include="gui\frIgrejaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\frIgrejaForm.Designer.cs">
+      <DependentUpon>frIgrejaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gui\frIgrejaList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gui\frIgrejaList.Designer.cs">
+      <DependentUpon>frIgrejaList.cs</DependentUpon>
+    </Compile>
     <Compile Include="gui\frLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,10 +91,19 @@
       <DependentUpon>frRegisterList.cs</DependentUpon>
     </Compile>
     <Compile Include="model.dao.impl\Register.dao.operacao.cs" />
+    <Compile Include="model.dao.impl\RegisterIgreja.dao.operacao.cs" />
     <Compile Include="model.dao\RegisterDao.cs" />
+    <Compile Include="model.dao\RegisterIgrejaDao.cs" />
     <Compile Include="model.entitie\Register.cs" />
+    <Compile Include="model.entitie\RegisterIgreja.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="gui\frIgrejaForm.resx">
+      <DependentUpon>frIgrejaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gui\frIgrejaList.resx">
+      <DependentUpon>frIgrejaList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="gui\frLogin.resx">
       <DependentUpon>frLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,9 +140,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="icones\pessoas.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="icones\Cadeado.png" />
   </ItemGroup>
   <ItemGroup>
@@ -129,6 +147,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\delete-file_40456.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-computer-icons-teamwork-icon-design-teamwork-icon-5b4bca1c6e8328.6292423315316935964527.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-bible-christian-church-pastor-computer-icons-church-5abf9b8fa3bb48.8586654315225066396707.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ajuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pessoas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NicePng_user-icon-png_1280406.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-computer-icons-favicon-clip-art-exit-free-png-icon-5ab071f3dd56d3.4912925015215129479066 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\89013.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-door-computer-icons-lock-key-exit-5aca61f9300381.1306238215232127931967.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-black-white-m-clip-art-product-design-line-help-svg-png-icon-free-download-169-24-online-5cf4f294daca45.3860031115595567568962.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -168,9 +168,6 @@ namespace Sistema_Igreja.model.dao.impl
             {
                 DB.desconectar();
             }
-
-        }
-
-       
+        }   
     }
 }

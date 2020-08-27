@@ -17,7 +17,7 @@ namespace Sistema_Igreja.gui
     public partial class frRegisterList : Form
     {
         frRegisterForm registerform = new frRegisterForm();
-        
+
         public frRegisterList()
         {
             InitializeComponent();
@@ -59,8 +59,8 @@ namespace Sistema_Igreja.gui
                 var result = Alerts.showAlertResult("Tem certeza que deseja Apagar " + dgvFrRegister.SelectedCells[3].Value.ToString() + ". Está operação será inrreverssivel", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
 
                 if (result == DialogResult.OK)
-                { 
-                   int? id = Utils.tryParseToInt(dgvFrRegister.SelectedCells[2].Value.ToString());
+                {
+                    int? id = Utils.tryParseToInt(dgvFrRegister.SelectedCells[2].Value.ToString());
                     RegisterDao registerOpercao = new RegisterOpercao();
                     registerOpercao.deleteById(id);
                     ChamarDataGridView();
@@ -89,7 +89,7 @@ namespace Sistema_Igreja.gui
             }
         }
 
-        
+
         private void chamarForm()
         {
             registerform.StartPosition = FormStartPosition.CenterScreen;
@@ -112,6 +112,10 @@ namespace Sistema_Igreja.gui
 
         }
 
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
 
