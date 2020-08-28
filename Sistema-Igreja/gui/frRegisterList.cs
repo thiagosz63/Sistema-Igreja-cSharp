@@ -18,6 +18,8 @@ namespace Sistema_Igreja.gui
     {
         frRegisterForm registerform = new frRegisterForm();
 
+        RegisterDao registerOpercao = new RegisterOpercao();
+
         public frRegisterList()
         {
             InitializeComponent();
@@ -61,7 +63,7 @@ namespace Sistema_Igreja.gui
                 if (result == DialogResult.OK)
                 {
                     int? id = Utils.tryParseToInt(dgvFrRegister.SelectedCells[2].Value.ToString());
-                    RegisterDao registerOpercao = new RegisterOpercao();
+                   
                     registerOpercao.deleteById(id);
                     ChamarDataGridView();
                 }
@@ -72,15 +74,16 @@ namespace Sistema_Igreja.gui
         {
             try
             {
-                RegisterDao ds = new RegisterOpercao();
-                dgvFrRegister.DataSource = ds.findAll();
-                dgvFrRegister.DataMember = ds.findAll().Tables[0].TableName;
+               
+                dgvFrRegister.DataSource = registerOpercao.findAll();
+                dgvFrRegister.DataMember = registerOpercao.findAll().Tables[0].TableName;
 
                 dgvFrRegister.Columns[2].HeaderText = "Codigo";
                 dgvFrRegister.Columns[3].HeaderText = "Nome";
                 dgvFrRegister.Columns[11].HeaderText = "Congregação";
                 dgvFrRegister.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
                 dgvFrRegister.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                txtPesquisa.Text = null;
 
             }
             catch (Exception)
@@ -115,6 +118,47 @@ namespace Sistema_Igreja.gui
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbPesquisa_Click(object sender, EventArgs e)
+        {
+            cbPesquisa.Items.Clear();
+            cbPesquisa.Items.Add("nome");
+            cbPesquisa.Items.Add("sexo");
+            cbPesquisa.Items.Add("estado_civil");
+            cbPesquisa.Items.Add("email");
+            cbPesquisa.Items.Add("rg");
+            cbPesquisa.Items.Add("cpf");
+            cbPesquisa.Items.Add("cargo");
+            cbPesquisa.Items.Add("situacao");
+            cbPesquisa.Items.Add("congregacao");
+            cbPesquisa.Items.Add("dirigente");      
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            if (cbPesquisa.Text != "")
+            {
+                
+                try
+                {
+                    
+                    dgvFrRegister.DataSource = registerOpercao.search(cbPesquisa.Text, txtPesquisa.Text);
+                    dgvFrRegister.DataMember = registerOpercao.search(cbPesquisa.Text, txtPesquisa.Text).Tables[0].TableName;
+
+                    dgvFrRegister.Columns[2].HeaderText = "Codigo";
+                    dgvFrRegister.Columns[3].HeaderText = "Nome";
+                    dgvFrRegister.Columns[11].HeaderText = "Congregação";
+                    dgvFrRegister.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvFrRegister.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+
         }
     }
 }

@@ -13,6 +13,6 @@ namespace Sistema_Igreja.model.dao
         void deleteById(int? obj);
         DataSet findByComboBox();
         DataSet findAll();
-        //List<Register> findByDepartment(Department department);
+        DataSet search(String coluna, String pesquisa);
     }
 }

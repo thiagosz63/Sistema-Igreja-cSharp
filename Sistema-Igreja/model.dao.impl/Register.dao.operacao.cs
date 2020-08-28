@@ -18,7 +18,7 @@ namespace Sistema_Igreja.model.dao.impl
     {
 
         MySqlCommand cmd = new MySqlCommand();
-       
+
 
 
         public int insert(entitie.Register obj)
@@ -94,6 +94,7 @@ namespace Sistema_Igreja.model.dao.impl
             }
             finally
             {
+                cmd.Parameters.Clear();
                 DB.desconectar();
             }
 
@@ -114,6 +115,7 @@ namespace Sistema_Igreja.model.dao.impl
             }
             finally
             {
+                cmd.Parameters.Clear();
                 DB.desconectar();
             }
 
@@ -139,6 +141,7 @@ namespace Sistema_Igreja.model.dao.impl
             }
             finally
             {
+                cmd.Parameters.Clear();
                 DB.desconectar();
             }
 
@@ -166,8 +169,37 @@ namespace Sistema_Igreja.model.dao.impl
             }
             finally
             {
+                cmd.Parameters.Clear();
                 DB.desconectar();
             }
-        }   
+        }
+
+
+        public DataSet search(String coluna, String pesquisa)
+        {
+            try
+            {
+
+                cmd.CommandText = "SELECT pessoas.*,igrejas.congregacao,igrejas.dirigente " +
+                           "FROM pessoas inner join igrejas on pessoas.id_congregacao = igrejas.congregacao" +
+                                " where " + coluna + " like " + "'" + pesquisa + "%" + "'";
+                cmd.Connection = DB.conectar();
+                DataSet ds = new DataSet();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(ds);
+                return ds;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cmd.Parameters.Clear();
+                DB.desconectar();
+            }
+        }
     }
 }
