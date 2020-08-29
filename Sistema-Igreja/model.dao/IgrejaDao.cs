@@ -13,5 +13,7 @@ namespace Sistema_Igreja.model.dao
         int insertIgreja(RegisterIgreja obj);
         void updateIgreja(RegisterIgreja obj);
         DataSet findAllIgreja();
+        void deleteByIdIgrejas(int? obj);
+        DataSet search2(String coluna, String pesquisa);
     }
 }

@@ -28,6 +28,7 @@ namespace Sistema_Igreja.gui
             txtCidade2.Text = null;
             txtEstado2.Text = null;
             mastxtboxTelef2.Text = null;
+            dateinaugurada.Text = null;
             cmbTipo2.Items.Clear();
         }
 

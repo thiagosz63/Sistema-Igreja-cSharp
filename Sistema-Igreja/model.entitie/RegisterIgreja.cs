@@ -18,9 +18,10 @@ namespace Sistema_Igreja.model.entitie
         private string estado;
         private string telefone;
         private string tipo;
+        private string inaugurada;
 
         public RegisterIgreja(int? cod, string congregacao, string dirigente, string rua, string numero, 
-            string bairro, string cidade, string estado, string telefone, string tipo)
+            string bairro, string cidade, string estado, string telefone, string tipo, DateTime inaugurada)
         {
             this.cod = cod;
             this.congregacao = congregacao;
@@ -32,6 +33,7 @@ namespace Sistema_Igreja.model.entitie
             this.estado = estado;
             this.telefone = telefone;
             this.tipo = tipo;
+            this.inaugurada = inaugurada.ToString();
         }
 
         public int? Cod { get => cod; set => cod = value; }
@@ -44,6 +46,8 @@ namespace Sistema_Igreja.model.entitie
         public string Estado { get => estado; set => estado = value; }
         public string Telefone { get => telefone; set => telefone = value; }
         public string Tipo { get => tipo; set => tipo = value; }
+        public string Inaugurada { get => inaugurada; set => Inaugurada = value; }
+
 
         public override string ToString()
         {

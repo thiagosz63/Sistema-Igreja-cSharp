@@ -35,8 +35,12 @@
             this.excluir = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnNovo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbPesquisaIgrejas = new System.Windows.Forms.ComboBox();
+            this.txtPesquisaIgrejas = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrRegister)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -44,6 +48,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.btnVoltar2);
             this.panel1.Controls.Add(this.dgvFrRegister);
             this.panel1.Controls.Add(this.btnNovo);
@@ -122,6 +127,35 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Registros de Igrejas";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbPesquisaIgrejas);
+            this.groupBox1.Controls.Add(this.txtPesquisaIgrejas);
+            this.groupBox1.Location = new System.Drawing.Point(243, 39);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(293, 54);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Pesquisar";
+            // 
+            // cbPesquisaIgrejas
+            // 
+            this.cbPesquisaIgrejas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPesquisaIgrejas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPesquisaIgrejas.FormattingEnabled = true;
+            this.cbPesquisaIgrejas.Location = new System.Drawing.Point(6, 17);
+            this.cbPesquisaIgrejas.Name = "cbPesquisaIgrejas";
+            this.cbPesquisaIgrejas.Size = new System.Drawing.Size(121, 28);
+            this.cbPesquisaIgrejas.TabIndex = 5;
+            // 
+            // txtPesquisaIgrejas
+            // 
+            this.txtPesquisaIgrejas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisaIgrejas.Location = new System.Drawing.Point(138, 19);
+            this.txtPesquisaIgrejas.Name = "txtPesquisaIgrejas";
+            this.txtPesquisaIgrejas.Size = new System.Drawing.Size(149, 26);
+            this.txtPesquisaIgrejas.TabIndex = 6;
+            // 
             // frIgrejaList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,6 +167,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrRegister)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -146,5 +182,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn excluir;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnVoltar2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbPesquisaIgrejas;
+        private System.Windows.Forms.TextBox txtPesquisaIgrejas;
     }
 }
