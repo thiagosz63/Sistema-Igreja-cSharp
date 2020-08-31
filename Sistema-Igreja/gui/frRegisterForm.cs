@@ -48,8 +48,6 @@ namespace Sistema_Igreja.gui
                 registeroperacao.update(register);
                 this.Close();
             }
-            
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -68,10 +66,7 @@ namespace Sistema_Igreja.gui
             txtCpf.Text = null;
             txtsituacao.Text = null;
             cmbSexo.Items.Clear();
-            cmbCongregacao.DataSource = null;
-           
-            
-            
+            cmbCongregacao.DataSource = null;        
         }
         public void carregarComboBox()
         {

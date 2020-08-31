@@ -11,7 +11,7 @@ using Sistema_Igreja.gui.util;
 
 namespace Sistema_Igreja.model.dao.impl
 {
-    class RegisterIgreja : IgrejaDao
+    class IgrejaOperacao : IgrejaDao
     {
         MySqlCommand cmd = new MySqlCommand();
 
@@ -26,7 +26,7 @@ namespace Sistema_Igreja.model.dao.impl
 
                 cmd.Parameters.Add("1", MySqlDbType.VarChar, 50).Value = obj.Congregacao;
                 cmd.Parameters.Add("2", MySqlDbType.VarChar, 1).Value = obj.Dirigente;
-                cmd.Parameters.Add("3", MySqlDbType.VarChar, 20).Value = obj.Rua;
+                cmd.Parameters.Add("3", MySqlDbType.VarChar, 50).Value = obj.Rua;
                 cmd.Parameters.Add("4", MySqlDbType.VarChar, 30).Value = obj.Numero;
                 cmd.Parameters.Add("5", MySqlDbType.VarChar, 15).Value = obj.Bairro;
                 cmd.Parameters.Add("6", MySqlDbType.VarChar, 15).Value = obj.Cidade;
@@ -64,7 +64,7 @@ namespace Sistema_Igreja.model.dao.impl
 
                 cmd.Parameters.Add("1", MySqlDbType.VarChar, 50).Value = obj.Congregacao;
                 cmd.Parameters.Add("2", MySqlDbType.VarChar, 1).Value = obj.Dirigente;
-                cmd.Parameters.Add("3", MySqlDbType.VarChar, 20).Value = obj.Rua;
+                cmd.Parameters.Add("3", MySqlDbType.VarChar, 50).Value = obj.Rua;
                 cmd.Parameters.Add("4", MySqlDbType.VarChar, 30).Value = obj.Numero;
                 cmd.Parameters.Add("5", MySqlDbType.VarChar, 15).Value = obj.Bairro;
                 cmd.Parameters.Add("6", MySqlDbType.VarChar, 15).Value = obj.Cidade;

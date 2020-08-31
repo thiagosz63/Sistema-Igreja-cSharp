@@ -19,26 +19,27 @@ create table PESSOAS(
 create table IGREJAS(
 	idigrejas int primary key auto_increment,
 	congregacao varchar (50) not null unique,
-	dirigente varchar(30) not null
+	dirigente varchar(30) not null,
+    data_inaugurada varchar(10) not null
 );
 
 create table ENDERECO(
 	idendereco int primary key auto_increment,
-	rua varchar (30) not null,
+	rua varchar (50) not null,
 	numero varchar (10),
 	bairro varchar (30) not null,
 	cidade varchar (30) not null,
 	estado char (2) not null,
-	id_pessoas int not null unique,
-	id_igrejas int not null unique
+	id_pessoas int unique,
+	id_igrejas int unique
 ); 
 
 create table TELEFONE(
 	idtelefone int primary key auto_increment,
 	tipo enum ('res','cel','com') not null,
 	numero varchar (10) not null,
-	id_pessoas int not null unique,
-	id_igrejas int not null unique
+	id_pessoas int unique,
+	id_igrejas int unique
 );
 
 create table ADMINISTRACAO(
@@ -77,3 +78,4 @@ alter table ENDERECO
 add constraint FK_ENDERECO_IGREJAS
 foreign key(id_igrejas)
 references IGREJAS(idigrejas);
+

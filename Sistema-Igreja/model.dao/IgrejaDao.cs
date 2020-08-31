@@ -1,4 +1,5 @@
-﻿using Sistema_Igreja.model.entitie;
+﻿using Sistema_Igreja.model.dao.impl;
+using Sistema_Igreja.model.entitie;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,10 +11,10 @@ namespace Sistema_Igreja.model.dao
 {
     interface IgrejaDao
     {
-        int insertIgreja(RegisterIgreja obj);
-        void updateIgreja(RegisterIgreja obj);
         DataSet findAllIgreja();
         void deleteByIdIgrejas(int? obj);
         DataSet search2(String coluna, String pesquisa);
+        int insertIgreja(RegisterIgreja igrejaOpe);
+        void updateIgreja(RegisterIgreja igrejaOpe);
     }
 }
