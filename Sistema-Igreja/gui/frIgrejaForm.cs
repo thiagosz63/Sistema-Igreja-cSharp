@@ -39,12 +39,11 @@ namespace Sistema_Igreja.gui
             this.Close();
         }
 
-
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            RegisterIgreja igrejaOpe = new RegisterIgreja(Utils.tryParseToInt(txtCod2.Text), txtCongregacao.Text, txtDirigente.Text,
-                txtRua2.Text, txtNumero2.Text, txtBairro2.Text, txtCidade2.Text, txtEstado2.Text, mastxtboxTelef2.Text, cmbTipo2.Text, dateinaugurada.Text);
+            RegisterIgreja igrejaOpe = new RegisterIgreja(Utils.tryParseToInt(txtCod2.Text), txtCongregacao.Text,
+                                       txtDirigente.Text, txtRua2.Text, txtNumero2.Text, txtBairro2.Text, txtCidade2.Text,
+                                       txtEstado2.Text, mastxtboxTelef2.Text, cmbTipo2.Text, dateinaugurada.Text);
 
 
             if (Utils.tryParseToInt(txtCod2.Text) == null)
@@ -66,9 +65,9 @@ namespace Sistema_Igreja.gui
         private void cmbTipo2_Click(object sender, EventArgs e)
         {
             cmbTipo2.Items.Clear();
-            cmbTipo2.Items.Add("res");
-            cmbTipo2.Items.Add("com");
-            cmbTipo2.Items.Add("cel");
+            cmbTipo2.Items.Add("RES");
+            cmbTipo2.Items.Add("COM");
+            cmbTipo2.Items.Add("CEL");
         }
     }
 }

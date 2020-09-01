@@ -30,7 +30,7 @@ namespace Sistema_Igreja.gui
             igrejaform.carregarComboBox2();
             igrejaform.lblView2.Text = "Cadastrar";
             chamarFormIgrejas();
-            ChamarDataGridView();
+            ChamarDataGridView2();
         }
 
         private void btnVoltar2_Click(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Sistema_Igreja.gui
             igrejaform.ShowDialog();
         }
 
-        private void ChamarDataGridView()
+        private void ChamarDataGridView2()
         {
             try
             {
@@ -73,7 +73,7 @@ namespace Sistema_Igreja.gui
                 // mostra o form...
                 povoandoFormIgreja();
                 chamarFormIgrejas();
-                ChamarDataGridView();
+                ChamarDataGridView2();
             }
 
             if (e.ColumnIndex == this.excluir2.Index && e.RowIndex >= 0)
@@ -89,7 +89,7 @@ namespace Sistema_Igreja.gui
                     int? id = Utils.tryParseToInt(dgvFrIgreja.SelectedCells[2].Value.ToString());
 
                     igrejaOperacao.deleteByIdIgrejas(id);
-                    ChamarDataGridView();
+                    ChamarDataGridView2();
                 }
             }
         }
@@ -110,6 +110,46 @@ namespace Sistema_Igreja.gui
             igrejaform.lblView2.Text = "Atualizar";
         }
 
-        
+        private void frIgrejaList_Load(object sender, EventArgs e)
+        {
+            ChamarDataGridView2();
+        }
+        private void txtPesquisaIgrejas_TextChanged(object sender, EventArgs e)
+        {
+            if (cbPesquisaIgrejas.Text != "")
+            {
+
+                try
+                {
+
+                    dgvFrIgreja.DataSource = igrejaOperacao.search2(cbPesquisaIgrejas.Text, txtPesquisaIgrejas.Text);
+                    dgvFrIgreja.DataMember = igrejaOperacao.search2(cbPesquisaIgrejas.Text, txtPesquisaIgrejas.Text).Tables[0].TableName;
+
+                    dgvFrIgreja.Columns[4].HeaderText = "FONE";
+                    dgvFrIgreja.Columns[7].HeaderText = "Nº";
+                    dgvFrIgreja.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    dgvFrIgreja.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+        }
+
+        private void cbPesquisaIgrejas_Click(object sender, EventArgs e)
+        {
+            cbPesquisaIgrejas.Items.Clear();
+            cbPesquisaIgrejas.Items.Add("Congregacao");
+            cbPesquisaIgrejas.Items.Add("Dirigente");
+            cbPesquisaIgrejas.Items.Add("Rua");
+            cbPesquisaIgrejas.Items.Add("Bairro");
+            cbPesquisaIgrejas.Items.Add("Cidade");
+            cbPesquisaIgrejas.Items.Add("Estado");
+            cbPesquisaIgrejas.Items.Add("Inaugurada");
+            cbPesquisaIgrejas.Items.Add("numero");
+            cbPesquisaIgrejas.Items.Add("Telefone");
+            cbPesquisaIgrejas.Items.Add("tipo");
+        }
     }
 }

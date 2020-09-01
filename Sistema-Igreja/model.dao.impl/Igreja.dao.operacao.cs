@@ -99,9 +99,9 @@ namespace Sistema_Igreja.model.dao.impl
             {
 
                 cmd.CommandText = "SELECT  I.CONGREGACAO,I.DIRIGENTE,T.NUMERO,T.TIPO,E.RUA,	E.NUMERO, E.BAIRRO," +
-                    "E.CIDADE,E.ESTADO FROM IGREJAS I" +
-                    " INNER JOIN TELEFONE T ON I.IDIGREJAS = T.ID_IGREJAS " +
-                    "INNER JOIN ENDERECO E ON I.IDIGREJAS = E.ID_IGREJAS ";
+                                  "E.CIDADE,E.ESTADO FROM IGREJAS I" +
+                                  " INNER JOIN TELEFONE T ON I.IDIGREJAS = T.ID_IGREJAS " +
+                                  "INNER JOIN ENDERECO E ON I.IDIGREJAS = E.ID_IGREJAS ";
                 cmd.Connection = DB.conectar();
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -147,10 +147,10 @@ namespace Sistema_Igreja.model.dao.impl
             {
 
                 cmd.CommandText = "SELECT  I.CONGREGACAO,I.DIRIGENTE,T.NUMERO,T.TIPO,E.RUA,	E.NUMERO, E.BAIRRO," +
-                    "E.CIDADE,E.ESTADO FROM IGREJAS I" +
-                    " INNER JOIN TELEFONE T ON I.IDIGREJAS = T.ID_IGREJAS " +
-                    "INNER JOIN ENDERECO E ON I.IDIGREJAS = E.ID_IGREJAS " +
-                                " where " + coluna + " like " + "'" + pesquisa + "%" + "'";
+                                  "E.CIDADE,E.ESTADO FROM IGREJAS I" +
+                                  " INNER JOIN TELEFONE T ON I.IDIGREJAS = T.ID_IGREJAS " +
+                                  "INNER JOIN ENDERECO E ON I.IDIGREJAS = E.ID_IGREJAS " +
+                                  " where " + coluna + " like " + "'" + pesquisa + "%" + "'";
                 cmd.Connection = DB.conectar();
                 DataSet ds = new DataSet();
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);

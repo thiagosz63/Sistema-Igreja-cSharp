@@ -34,10 +34,10 @@
             this.txtPesquisaIgrejas = new System.Windows.Forms.TextBox();
             this.btnVoltar2 = new System.Windows.Forms.Button();
             this.dgvFrIgreja = new System.Windows.Forms.DataGridView();
-            this.btnNovo = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.editar2 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.excluir2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnNovo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFrIgreja)).BeginInit();
@@ -78,6 +78,7 @@
             this.cbPesquisaIgrejas.Name = "cbPesquisaIgrejas";
             this.cbPesquisaIgrejas.Size = new System.Drawing.Size(121, 28);
             this.cbPesquisaIgrejas.TabIndex = 5;
+            this.cbPesquisaIgrejas.Click += new System.EventHandler(this.cbPesquisaIgrejas_Click);
             // 
             // txtPesquisaIgrejas
             // 
@@ -86,6 +87,7 @@
             this.txtPesquisaIgrejas.Name = "txtPesquisaIgrejas";
             this.txtPesquisaIgrejas.Size = new System.Drawing.Size(149, 26);
             this.txtPesquisaIgrejas.TabIndex = 6;
+            this.txtPesquisaIgrejas.TextChanged += new System.EventHandler(this.txtPesquisaIgrejas_TextChanged);
             // 
             // btnVoltar2
             // 
@@ -117,6 +119,24 @@
             this.dgvFrIgreja.Size = new System.Drawing.Size(796, 351);
             this.dgvFrIgreja.TabIndex = 5;
             // 
+            // editar2
+            // 
+            this.editar2.HeaderText = "";
+            this.editar2.Name = "editar2";
+            this.editar2.ReadOnly = true;
+            this.editar2.Text = "Editar";
+            this.editar2.UseColumnTextForButtonValue = true;
+            this.editar2.Width = 5;
+            // 
+            // excluir2
+            // 
+            this.excluir2.HeaderText = "";
+            this.excluir2.Name = "excluir2";
+            this.excluir2.ReadOnly = true;
+            this.excluir2.Text = "Excluir";
+            this.excluir2.UseColumnTextForButtonValue = true;
+            this.excluir2.Width = 5;
+            // 
             // btnNovo
             // 
             this.btnNovo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,24 +158,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Registros de Igrejas";
             // 
-            // editar2
-            // 
-            this.editar2.HeaderText = "";
-            this.editar2.Name = "editar2";
-            this.editar2.ReadOnly = true;
-            this.editar2.Text = "Editar";
-            this.editar2.UseColumnTextForButtonValue = true;
-            this.editar2.Width = 5;
-            // 
-            // excluir2
-            // 
-            this.excluir2.HeaderText = "";
-            this.excluir2.Name = "excluir2";
-            this.excluir2.ReadOnly = true;
-            this.excluir2.Text = "Excluir";
-            this.excluir2.UseColumnTextForButtonValue = true;
-            this.excluir2.Width = 5;
-            // 
             // frIgrejaList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,6 +166,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frIgrejaList";
             this.Text = "frIgrejaList";
+            this.Load += new System.EventHandler(this.frIgrejaList_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
