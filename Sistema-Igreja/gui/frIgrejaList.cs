@@ -62,38 +62,6 @@ namespace Sistema_Igreja.gui
                 throw;
             }
         }
-
-        private void dgvFrIgreja_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == this.editar2.Index && e.RowIndex >= 0)
-            {
-                // pega a linha atual...
-                DataGridViewRow currentRow = this.dgvFrIgreja.Rows[e.RowIndex];
-                igrejaform.clearFormIgreja();
-                // mostra o form...
-                povoandoFormIgreja();
-                chamarFormIgrejas();
-                ChamarDataGridView2();
-            }
-
-            if (e.ColumnIndex == this.excluir2.Index && e.RowIndex >= 0)
-            {
-                // pega a linha atual...
-                DataGridViewRow currentRow = this.dgvFrIgreja.Rows[e.RowIndex];
-                igrejaform.clearFormIgreja();
-                // mostra o form...
-                var result = Alerts.showAlertResult("Tem certeza que deseja Apagar " + dgvFrIgreja.SelectedCells[3].Value.ToString() + ". Está operação será inrreverssivel", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
-
-                if (result == DialogResult.OK)
-                {
-                    int? id = Utils.tryParseToInt(dgvFrIgreja.SelectedCells[2].Value.ToString());
-
-                    igrejaOperacao.deleteByIdIgrejas(id);
-                    ChamarDataGridView2();
-                }
-            }
-        }
-
         private void povoandoFormIgreja()
         {
             igrejaform.txtCod2.Text = dgvFrIgreja.SelectedCells[2].Value.ToString();
@@ -150,6 +118,37 @@ namespace Sistema_Igreja.gui
             cbPesquisaIgrejas.Items.Add("numero");
             cbPesquisaIgrejas.Items.Add("Telefone");
             cbPesquisaIgrejas.Items.Add("tipo");
+        }
+
+        private void dgvFrIgreja_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == this.editar2.Index && e.RowIndex >= 0)
+            {
+                // pega a linha atual...
+                DataGridViewRow currentRow = this.dgvFrIgreja.Rows[e.RowIndex];
+                igrejaform.clearFormIgreja();
+                // mostra o form...
+                povoandoFormIgreja();
+                chamarFormIgrejas();
+                ChamarDataGridView2();
+            }
+
+            if (e.ColumnIndex == this.excluir2.Index && e.RowIndex >= 0)
+            {
+                // pega a linha atual...
+                DataGridViewRow currentRow = this.dgvFrIgreja.Rows[e.RowIndex];
+                igrejaform.clearFormIgreja();
+                // mostra o form...
+                var result = Alerts.showAlertResult("Tem certeza que deseja Apagar " + dgvFrIgreja.SelectedCells[3].Value.ToString() + ". Está operação será inrreverssivel", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+
+                if (result == DialogResult.OK)
+                {
+                    int? id = Utils.tryParseToInt(dgvFrIgreja.SelectedCells[2].Value.ToString());
+
+                    igrejaOperacao.deleteByIdIgrejas(id);
+                    ChamarDataGridView2();
+                }
+            }
         }
     }
 }

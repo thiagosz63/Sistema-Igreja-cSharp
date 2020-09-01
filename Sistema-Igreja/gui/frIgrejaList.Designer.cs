@@ -118,6 +118,7 @@
             this.dgvFrIgreja.ReadOnly = true;
             this.dgvFrIgreja.Size = new System.Drawing.Size(796, 351);
             this.dgvFrIgreja.TabIndex = 5;
+            this.dgvFrIgreja.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFrIgreja_CellClick);
             // 
             // editar2
             // 
