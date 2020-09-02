@@ -42,7 +42,6 @@
             this.cmbTipo2 = new System.Windows.Forms.ComboBox();
             this.mastxtboxTelef2 = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtCongregacao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDirigente = new System.Windows.Forms.TextBox();
@@ -58,6 +57,7 @@
             this.dateinaugurada = new System.Windows.Forms.DateTimePicker();
             this.txtEstado2 = new System.Windows.Forms.TextBox();
             this.txtCidade2 = new System.Windows.Forms.TextBox();
+            this.cmbIgreja = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -180,12 +180,11 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.42461F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.14385F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 102F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.tableLayoutPanel4.Controls.Add(this.label10, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.cmbTipo2, 1, 3);
             this.tableLayoutPanel4.Controls.Add(this.mastxtboxTelef2, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.label9, 0, 2);
-            this.tableLayoutPanel4.Controls.Add(this.txtCongregacao, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtDirigente, 3, 0);
@@ -201,6 +200,7 @@
             this.tableLayoutPanel4.Controls.Add(this.dateinaugurada, 5, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtEstado2, 5, 2);
             this.tableLayoutPanel4.Controls.Add(this.txtCidade2, 3, 2);
+            this.tableLayoutPanel4.Controls.Add(this.cmbIgreja, 1, 0);
             this.tableLayoutPanel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel4.Location = new System.Drawing.Point(1, 119);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -251,16 +251,6 @@
             this.label9.TabIndex = 13;
             this.label9.Text = "Telefone:";
             // 
-            // txtCongregacao
-            // 
-            this.txtCongregacao.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCongregacao.Location = new System.Drawing.Point(119, 3);
-            this.txtCongregacao.Name = "txtCongregacao";
-            this.txtCongregacao.Size = new System.Drawing.Size(248, 26);
-            this.txtCongregacao.TabIndex = 45;
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -277,7 +267,7 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(380, 0);
+            this.label4.Location = new System.Drawing.Point(378, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 40);
             this.label4.TabIndex = 4;
@@ -287,7 +277,7 @@
             // 
             this.txtDirigente.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDirigente.Location = new System.Drawing.Point(463, 3);
+            this.txtDirigente.Location = new System.Drawing.Point(461, 3);
             this.txtDirigente.Name = "txtDirigente";
             this.txtDirigente.Size = new System.Drawing.Size(117, 26);
             this.txtDirigente.TabIndex = 21;
@@ -310,7 +300,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtRua2.Location = new System.Drawing.Point(119, 43);
             this.txtRua2.Name = "txtRua2";
-            this.txtRua2.Size = new System.Drawing.Size(248, 26);
+            this.txtRua2.Size = new System.Drawing.Size(247, 26);
             this.txtRua2.TabIndex = 8;
             // 
             // label6
@@ -319,7 +309,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label6.Location = new System.Drawing.Point(392, 40);
+            this.label6.Location = new System.Drawing.Point(390, 40);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 40);
             this.label6.TabIndex = 40;
@@ -327,7 +317,7 @@
             // 
             // txtNumero2
             // 
-            this.txtNumero2.Location = new System.Drawing.Point(463, 43);
+            this.txtNumero2.Location = new System.Drawing.Point(461, 43);
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(68, 26);
             this.txtNumero2.TabIndex = 41;
@@ -337,7 +327,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(627, 40);
+            this.label7.Location = new System.Drawing.Point(625, 40);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 40);
             this.label7.TabIndex = 11;
@@ -345,7 +335,7 @@
             // 
             // txtBairro2
             // 
-            this.txtBairro2.Location = new System.Drawing.Point(688, 43);
+            this.txtBairro2.Location = new System.Drawing.Point(686, 43);
             this.txtBairro2.Name = "txtBairro2";
             this.txtBairro2.Size = new System.Drawing.Size(98, 26);
             this.txtBairro2.TabIndex = 37;
@@ -355,7 +345,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(394, 80);
+            this.label8.Location = new System.Drawing.Point(392, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(63, 50);
             this.label8.TabIndex = 12;
@@ -365,7 +355,7 @@
             // 
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(618, 80);
+            this.label11.Location = new System.Drawing.Point(616, 80);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 20);
             this.label11.TabIndex = 43;
@@ -375,7 +365,7 @@
             // 
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(587, 0);
+            this.label12.Location = new System.Drawing.Point(585, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(95, 20);
             this.label12.TabIndex = 47;
@@ -384,24 +374,33 @@
             // dateinaugurada
             // 
             this.dateinaugurada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateinaugurada.Location = new System.Drawing.Point(688, 3);
+            this.dateinaugurada.Location = new System.Drawing.Point(686, 3);
             this.dateinaugurada.Name = "dateinaugurada";
             this.dateinaugurada.Size = new System.Drawing.Size(101, 26);
             this.dateinaugurada.TabIndex = 48;
             // 
             // txtEstado2
             // 
-            this.txtEstado2.Location = new System.Drawing.Point(688, 83);
+            this.txtEstado2.Location = new System.Drawing.Point(686, 83);
             this.txtEstado2.Name = "txtEstado2";
             this.txtEstado2.Size = new System.Drawing.Size(113, 26);
             this.txtEstado2.TabIndex = 42;
             // 
             // txtCidade2
             // 
-            this.txtCidade2.Location = new System.Drawing.Point(463, 83);
+            this.txtCidade2.Location = new System.Drawing.Point(461, 83);
             this.txtCidade2.Name = "txtCidade2";
             this.txtCidade2.Size = new System.Drawing.Size(98, 26);
             this.txtCidade2.TabIndex = 38;
+            // 
+            // cmbIgreja
+            // 
+            this.cmbIgreja.FormattingEnabled = true;
+            this.cmbIgreja.Location = new System.Drawing.Point(119, 3);
+            this.cmbIgreja.Name = "cmbIgreja";
+            this.cmbIgreja.Size = new System.Drawing.Size(247, 28);
+            this.cmbIgreja.TabIndex = 49;
+            this.cmbIgreja.Click += new System.EventHandler(this.cmbIgreja_Click);
             // 
             // frIgrejaForm
             // 
@@ -450,7 +449,6 @@
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox txtRua2;
         public System.Windows.Forms.TextBox txtCidade2;
-        public System.Windows.Forms.TextBox txtCongregacao;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.Label lblView2;
@@ -459,5 +457,6 @@
         public System.Windows.Forms.TextBox txtEstado2;
         public System.Windows.Forms.ComboBox cmbTipo2;
         public System.Windows.Forms.MaskedTextBox mastxtboxTelef2;
+        public System.Windows.Forms.ComboBox cmbIgreja;
     }
 }

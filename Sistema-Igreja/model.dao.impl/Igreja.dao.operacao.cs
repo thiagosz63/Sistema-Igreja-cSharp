@@ -169,5 +169,32 @@ namespace Sistema_Igreja.model.dao.impl
                 DB.desconectar();
             }
         }
+
+        public DataSet findByComboBox2()
+        {
+            try
+            {
+
+                cmd.CommandText = "SELECT * FROM igrejas";
+                cmd.Connection = DB.conectar();
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                cmd.Parameters.Clear();
+                DB.desconectar();
+            }
+
+        }
     }
 }

@@ -65,7 +65,7 @@ namespace Sistema_Igreja.gui
         private void povoandoFormIgreja()
         {
             igrejaform.txtCod2.Text = dgvFrIgreja.SelectedCells[2].Value.ToString();
-            igrejaform.txtCongregacao.Text = dgvFrIgreja.SelectedCells[3].Value.ToString();
+            igrejaform.cmbIgreja.Text = dgvFrIgreja.SelectedCells[3].Value.ToString();
             igrejaform.txtDirigente.Text = dgvFrIgreja.SelectedCells[4].Value.ToString();
             igrejaform.txtRua2.Text = dgvFrIgreja.SelectedCells[5].Value.ToString();
             igrejaform.txtNumero2.Text = dgvFrIgreja.SelectedCells[6].Value.ToString();

@@ -79,3 +79,6 @@ add constraint FK_ENDERECO_IGREJAS
 foreign key(id_igrejas)
 references IGREJAS(idigrejas);
 
+
+
+

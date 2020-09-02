@@ -16,5 +16,7 @@ namespace Sistema_Igreja.model.dao
         DataSet search2(String coluna, String pesquisa);
         int insertIgreja(RegisterIgreja igrejaOpe);
         void updateIgreja(RegisterIgreja igrejaOpe);
+
+        DataSet findByComboBox2();
     }
 }
